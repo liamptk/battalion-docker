@@ -19,7 +19,7 @@ RUN apt-get -y update && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
     chmod 777 -R *
-    "$BATTALIONRUN/Run.sh"
+    "./$BATTALIONRUN/Run.sh"
     
 
 ENTRYPOINT ["$BATTALIONDIR"]
