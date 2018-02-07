@@ -18,7 +18,6 @@ services:
     restart: always
     volumes:
       - /data/DefaultGame.ini:/battalion/LinuxServer/DefaultGame.ini
-      - /data/Run.sh:/battalion/LinuxServer/Run.sh
     ports:
       - "7777:7777"
       - "7780:7780"

@@ -7,7 +7,7 @@ MAINTAINER Liam Kelly <liamptk@gmail.com>
 ENV BATTALIONDIR="/battalion"
 ENV BATTALIONDL="https://storage.googleapis.com/battalion_public/BattalionLinuxServer_10849.zip"
 ENV BATTALIONZIP="BattalionLinuxServer_10849.zip"
-ENV BATTALIONRUN="$BATTALIONDIR/LinuxServer/Run.sh"
+ENV BATTALIONRUN="$BATTALIONDIR/LinuxServer"
 
 
 # Download, unzip and run the server
@@ -19,7 +19,7 @@ RUN apt-get -y update && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
     chmod 777 -R *
-    "./$BATTALIONRUN"
+    "$BATTALIONRUN/Run.sh"
     
 
 ENTRYPOINT ["$BATTALIONDIR"]
