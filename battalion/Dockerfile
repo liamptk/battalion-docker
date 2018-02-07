@@ -18,8 +18,6 @@ RUN apt-get -y update && \
     wget "$BATTALIONDL" && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
-    chmod 777 -R *
+    chmod 777 -R * && \
     "./battalion/LinuxServer/Run.sh"
     
-
-ENTRYPOINT ["$BATTALIONDIR"]
