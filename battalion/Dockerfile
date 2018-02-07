@@ -15,7 +15,8 @@ ENV BATTALIONRUN="$BATTALIONDIR/LinuxServer"
 RUN apt-get -y update && \
     apt-get -y install unzip && \
     apt-get -y install wget && \
-    wget "$BATTALIONDL" && \
+ 
+CMD wget "$BATTALIONDL" && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
     chmod 777 -R /battalion/*
