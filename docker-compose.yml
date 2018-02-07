@@ -1,0 +1,36 @@
+# Unofficial Battallion 1944 Server
+# Author: Liam Kelly
+# Email: liamptk@gmail.com
+# Git: https://github.com/liamptk
+
+version: '2'
+
+services:
+
+  steamcmd:
+    build:
+      context: steamcmd/
+    restart: always
+
+  battalion:
+    build:
+      context: battalion/
+    restart: always
+    volumes:
+      - /data/DefaultGame.ini:/battalion/LinuxServer/DefaultGame.ini
+      - /data/Run.sh:/battalion/LinuxServer/Run.sh
+    ports:
+      - "7777:7777"
+      - "7780:7780"
+    environment:
+      BROADCAST_IP: "127.0.0.1"
+    networks:
+      - battalion-server
+    depends_on:
+      - steamcmd
+
+
+networks:
+
+  battalion:
+    driver: bridge
