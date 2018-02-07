@@ -18,6 +18,7 @@ RUN apt-get -y update && \
     wget "$BATTALIONDL" && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
+    chmod 777 -R *
     "./$BATTALIONRUN"
     
 
