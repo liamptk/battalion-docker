@@ -12,8 +12,8 @@ ENV BATTALIONRUN="$BATTALIONDIR/LinuxServer/Run.sh"
 
 # Download, unzip and run the server
 
-RUN apt-get install -y update && \
-    apt-get install -y unzip && \
+RUN apt-get -y update && \
+    apt-get -y install unzip && \
     wget "$BATTALIONDL" && \
 	mkdir -p "$BATTALIONDIR" && \
     unzip "$BATTALIONZIP" -d "$BATTALIONDIR" && \
